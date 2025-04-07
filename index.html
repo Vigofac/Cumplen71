@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Cumpleaños 71</title>
+  <style>
+    body {
+      background-color: #add8e6;
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding: 2rem;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 2rem;
+    }
+
+    .fila-botones {
+      display: flex;
+      justify-content: center;
+      gap: 0.5rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .boton-mes {
+      background-color: #4CAF50;
+      color: white;
+      padding: 0.5rem;
+      font-size: 1rem;
+      border: none;
+      border-radius: 10px;
+      box-shadow: 0 4px #2e7031;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      width: 60px;
+    }
+
+    .boton-mes:active {
+      box-shadow: 0 2px #2e7031;
+      transform: translateY(2px);
+    }
+
+    ul {
+      margin-top: 1rem;
+      list-style-type: none;
+      padding: 0;
+    }
+
+    li {
+      padding: 0.3rem;
+      font-size: 1.1rem;
+    }
+  </style>
+</head>
+<body>
+  <h1>Consulta Cumpleaños 71</h1>
+
+  <div class="fila-botones">
+    <button class="boton-mes" onclick="mostrarCumpleanios('enero')">ENE</button>
+    <button class="boton-mes" onclick="mostrarCumpleanios('febrero')">FEB</button>
+    <button class="boton-mes" onclick="mostrarCumpleanios('marzo')">MAR</button>
+    <button class="boton-mes" onclick="mostrarCumpleanios('abril')">ABR</button>
+    <button class="boton-mes" onclick="mostrarCumpleanios('mayo')">MAY</button>
+    <button class="boton-mes" onclick="mostrarCumpleanios('junio')">JUN</button>
+  </div>
+  <div class="fila-botones">
+    <button class="boton-mes" onclick="mostrarCumpleanios('julio')">JUL</button>
+    <button class="boton-mes" onclick="mostrarCumpleanios('agosto')">AGO</button>
+    <button class="boton-mes" onclick="mostrarCumpleanios('septiembre')">SEP</button>
+    <button class="boton-mes" onclick="mostrarCumpleanios('octubre')">OCT</button>
+    <button class="boton-mes" onclick="mostrarCumpleanios('noviembre')">NOV</button>
+    <button class="boton-mes" onclick="mostrarCumpleanios('diciembre')">DIC</button>
+  </div>
+
+  <ul id="lista-cumpleanios"></ul>
+
+  <script>
+    const cumpleanios = {
+      "enero": [
+        "15 - Julian Vanegas",
+        "16 - Andres Ortega Mahecha",
+        "18 - Jhon Rivera",
+        "19 - Johan Giovanni Pino",
+        "21 - Andres garay",
+        "21 - Leonardo Alvarez"
+      ],
+      "febrero": [
+        "06 - Carlos valencia",
+        "19 - Erwin Castro",
+        "29 - Carlos Angel"
+      ],
+      "marzo": [
+        "10 - Fernando Cardona",
+        "13 - Cristian Zapata",
+        "18 - Alejandro Ortiz",
+        "19 - Leguizamon PolloFinka",
+        "19 - Baruc Azos"
+      ],
+      "abril": [
+        "03 - Leonardo Torres Mosquera",
+        "05 - Juan Guillermo Facundo",
+        "06 - Daniel Jiménez",
+        "08 - Sergio Moncayo",
+        "10 - Nestor Fajardo Ochoa",
+        "17 - Guillermo Andres Cabal Castellanos",
+        "18 - Mario carvajal",
+        "24 - Juan Jose Lopez Duque"
+      ],
+      "mayo": [
+        "03 - Cesar Caro",
+        "06 - Luis Fernando Giraldo Escobar",
+        "07 - Gildardo Garcia Galvis",
+        "18 - Gabriel Vanegas",
+        "29 - Sixto Santibanez"
+      ],
+      "junio": [
+        "03 - Fabian Salazar",
+        "17 - Edgar Adrián Zambrano Tamayo",
+        "21 - Cristian Enrique Ochoa Montanez",
+        "21 - Luis Raul Sanchez",
+        "22 - Diego Fernando Galarza Perez",
+        "29 - Jolman Bahamon"
+      ],
+      "julio": [
+        "06 - Alejandro Cruz Salazar",
+        "15 - Julio Gonzalez",
+        "15 - Giovanni Jimenez",
+        "29 - Andres Correa"
+      ],
+      "agosto": [
+        "03 - Mauricio Guevara",
+        "16 - Javier delgado",
+        "23 - Jose Alexander Velez",
+        "25 - Carlos Alberto Gutierrez Suarez",
+        "29 - Ciro Duarte"
+      ],
+      "septiembre": [
+        "03 - Diego Enrique Guarin Guarin",
+        "05 - Jorge Delgado Zapata",
+        "13 - John Guerrero"
+      ],
+      "octubre": [
+        "02 - Fabián Enrique Hoyos Paternina",
+        "05 - Helio Jose Chica Martinez",
+        "06 - Alejandro Archiniegas",
+        "15 - Juan Carlos Pedroza Sanchez",
+        "16 - Javier Pinto",
+        "19 - Howar Cortes",
+        "19 - Pablo Pabon Forero",
+        "20 - Johan Albeiro Sanchez",
+        "25 - German Varela"
+      ],
+      "noviembre": [
+        "01 - Felipe Ramirez",
+        "01 - Felipe ramirez",
+        "02 - Luis Fernando Escobar",
+        "04 - Sergio Perdomo",
+        "09 - Carlos Castro",
+        "11 - Diego Casas",
+        "14 - Fredy Gonzalez",
+        "23 - Felipe vacca",
+        "26 - Fernando Briceno"
+      ],
+      "diciembre": [
+        "04 - Roberto Carlos Aldana Patiño",
+        "06 - Carlo Adrian Castro Barona",
+        "10 - Alejandro Leguizamon",
+        "22 - Sergio Orduz",
+        "23 - Andres Cespedes",
+        "26 - Oliver Moncaleano"
+      ]
+    };
+
+    function mostrarCumpleanios(mes) {
+      const lista = document.getElementById("lista-cumpleanios");
+      lista.innerHTML = "";
+
+      if (cumpleanios[mes]) {
+        cumpleanios[mes].forEach(persona => {
+          const li = document.createElement("li");
+          li.textContent = persona;
+          lista.appendChild(li);
+        });
+      } else {
+        lista.innerHTML = "<li>No hay cumpleaños para este mes.</li>";
+      }
+    }
+  </script>
+</body>
+</html>
